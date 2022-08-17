@@ -324,7 +324,10 @@ class Pagodo:
                     # Save URLs with valid results to an .txt file.
                     if self.save_urls_to_file:
                         with open(self.save_urls_to_file, "a") as fh:
-                            fh.write(f"# {dork}\n")
+                            if self.domain:
+                                fh.write(f"# site:{self.domain} {dork}")
+                            else:
+                                fh.write(f"# {dork}\n")
                             for url in dork_urls_list:
                                 fh.write(f"{url}\n")
                             fh.write("#" * 50 + "\n")
