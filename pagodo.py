@@ -325,7 +325,7 @@ class Pagodo:
                     if self.save_urls_to_file:
                         with open(self.save_urls_to_file, "a") as fh:
                             if self.domain:
-                                fh.write(f"# site:{self.domain} {dork}")
+                                fh.write(f"# site:{self.domain} {dork}\n")
                             else:
                                 fh.write(f"# {dork}\n")
                             for url in dork_urls_list:
